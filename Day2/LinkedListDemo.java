@@ -1,7 +1,16 @@
 
-package Demo;
 
-class LinkedList {
+class Node {
+    int data;
+    Node next;
+ 
+    Node(int info) {
+        data = info;
+        next = null;
+    }
+}
+
+class LinkedList{
  
     Node head = null;
  
@@ -66,7 +75,7 @@ class LinkedList {
         else {
             Node temp = head;
             head = head.next;
-            temp = null;
+            temp.next = null;
         }
     }
 
@@ -114,6 +123,19 @@ class LinkedList {
                 i++;
                 }
         }
+    }
+
+    void showMiddle() {
+
+        Node slow = head;
+        Node fast = head;
+
+        for (; fast != null && fast.next != null;
+                slow = slow.next, fast = fast.next.next) {
+
+        }
+
+        System.out.println("Middle Node: " + slow.data);
     }
     // Display linked list
     void show() {
